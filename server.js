@@ -11,6 +11,10 @@ const prisma = new PrismaClient();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the API!");
+});
+
 // Rota de registro
 app.post('/api/register', async (req, res) => {
   const { firstName, lastName, cpf, phoneNumber, username, password } = req.body;
@@ -50,7 +54,9 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+const port = 3333;
+
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(process.env.PORT || port, () => {
+  console.log(`Server listening on port ${port}`);
 });
