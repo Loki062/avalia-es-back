@@ -3,7 +3,7 @@
   "scripts": {
     "postinstall": "prisma generate",
     "dev": "tsx watch src/server.ts",
-    "build": "prisma generate && tsc",
+     "build": "prisma generate && echo 'Prisma generation complete' && tsc && echo 'TypeScript compilation complete'",
     "start": "node build/server.js"
   },
   "devDependencies": {
