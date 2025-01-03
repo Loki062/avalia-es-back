@@ -1,7 +1,20 @@
 {
   "description": "",
+  "scripts": {
+    "postinstall": "prisma generate",
+    "dev": "tsx watch src/server.ts",
+    "build": "prisma generate && tsc",
+    "start": "node build/server.js"
+  },
   "devDependencies": {
-    "prisma": "^6.1.0"
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.3",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.10.5",
+    "prisma": "^6.1.0",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
     "@prisma/client": "^6.1.0",
